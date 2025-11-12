@@ -1,61 +1,150 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 Laravel E‑commerce App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?logo=laravel&logoColor=white)](#)
+[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php&logoColor=white)](#)
+[![Auth](https://img.shields.io/badge/Auth-Laravel%20Breeze-0EA5E9?logo=laravel&logoColor=white)](#)
+[![Notifications](https://img.shields.io/badge/Toast-PHPFlasher%2FNotyf-10B981)](#)
+[![Tests](https://img.shields.io/badge/Tests-Pest-111827)](#)
+[![Code%20Style](https://img.shields.io/badge/Code%20Style-Pint-4F46E5)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3B82F6)](#)
 
-## About Laravel
+A production‑ready **e‑commerce** application built with **Laravel 12** and **PHP 8.2+**.  
+It features a public product catalog, product detail pages, a session‑based shopping cart, and an authenticated dashboard for product management. The project follows modern Laravel architecture with a focus on scalability, performance, and clean code.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
+- Public product catalog & detail pages
+- 🛒 **Full cart system** (add, remove, update quantity, persistent session)
+- Admin dashboard for product CRUD
+- Authenticated and verified routes (Laravel Breeze)
+- Flash notifications with PHPFlasher/Notyf
+- PSR‑12 code style with Laravel Pint
+- Real‑time logging via Laravel Pail
+- Optional Docker setup (Laravel Sail)
+- Developer‑friendly testing with Pest
+- Debugbar integration for local development
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛒 Cart System
+A complete cart module built using Laravel sessions, ensuring smooth user experience even without authentication.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Key Features:**
+- Add, remove, and update items dynamically  
+- Automatic subtotal & total price calculation  
+- Session-based persistence for guest users  
+- Integrated with product color & image variations  
+- Compatible with authenticated checkout flow (future roadmap)  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Controllers involved:
+- `AddToCartController`
+- `CartPageController`
+- `ProductController` (for admin sync)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🛠 Tech Stack
+- **Framework:** Laravel 12
+- **Language:** PHP 8.2+
+- **Auth:** Laravel Breeze (Blade + Tailwind)
+- **UI/UX:** Notyf (PHPFlasher integration)
+- **Database:** MySQL (default), SQLite (dev)
+- **Storage:** Local `public/uploads`, S3-ready
+- **Tooling:** Pest, Pint, Pail, Sail, Debugbar
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## ⚙️ Installation
+```bash
+git clone https://github.com/DevAliG/laravel-ecommerce.git
+cd laravel-ecommerce
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Database Setup
+Configure your `.env`:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ecommerce_app
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+Then run migrations:
+```bash
+php artisan migrate
+```
 
-## Contributing
+### Filesystem & Media
+Product media stored in:
+```
+public/uploads/products
+```
+To use Laravel’s storage link:
+```bash
+php artisan storage:link
+# Set FILESYSTEM_DISK=public in .env if needed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Run (Development)
+```bash
+php artisan serve
+npm run dev
+```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🧱 Architecture Overview
+- **Controllers:** `ProductPageController`, `ProductController` (admin), `AddToCartController`, `CartPageController`, `ProfileController`
+- **Requests:** `ProductStoreRequest`, `ProfileUpdateRequest`
+- **Models:** `Product`, `ProductImage`, `ProductColor`, `User`
+- **Routing:** Public (catalog, cart) + Authenticated (dashboard, product CRUD)
+- **Auth:** Login, reset, verification via Laravel Breeze (registration disabled by default)
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🧪 Tests & Code Quality
+```bash
+php artisan test          # or: ./vendor/bin/pest
+./vendor/bin/pint         # format code style
+php artisan pail          # live log viewer
+```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🔒 Security Notes
+- Registration disabled by default
+- `.env` must never be committed
+- CSRF protection and validation included
+- Authenticated admin-only access for product management
+- FormRequests used for input sanitization
+
+---
+
+## 🚀 Roadmap
+- [x] Product catalog, details, cart
+- [x] Admin product CRUD
+- [x] Auth (login, reset, verify)
+- [x] Notifications (Notyf)
+- [ ] Checkout & order flow
+- [ ] Payment integration
+- [ ] Inventory tracking
+- [ ] Image optimization & CDN
+- [ ] CI/CD pipeline setup
+
+---
+
+## 👤 Author
+**DevAliG (Ali Ghanbarzadeh)**  
+Backend Developer — Laravel & PHP  
+[LinkedIn](https://www.linkedin.com/in/devalig) • [GitHub](https://github.com/DevAliG)
+
+---
+
+## 📄 License
+MIT
