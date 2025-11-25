@@ -26,6 +26,11 @@ It features a public product catalog, product detail pages, a session‑based sh
 - Debugbar integration for local development
 
 ---
+## 🎥 Demo
+
+![Portfolio App Demo](Ecommerce.gif)
+
+---
 
 ## 🛒 Cart System
 A complete cart module built using Laravel sessions, ensuring smooth user experience even without authentication.
@@ -141,7 +146,8 @@ php artisan pail          # live log viewer
 
 ## 👤 Author
 **DevAliG (Ali Ghanbarzadeh)**  
-Backend Developer — Laravel & PHP  
+SaaS & MVP Builder | Tech Content Creator
+
 [LinkedIn](https://www.linkedin.com/in/devalig) • [GitHub](https://github.com/DevAliG)
 
 ---
