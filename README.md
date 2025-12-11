@@ -145,10 +145,13 @@ php artisan pail          # live log viewer
 ---
 
 ## 👤 Author
-**DevAliG (Ali Ghanbarzadeh)**  
-SaaS & MVP Builder | Tech Content Creator
+** Ali Ghanbarzadeh (TheSeyqal)**  
+SaaS & MVP Builder | Tech Content Creator | Educator
 
-[LinkedIn](https://www.linkedin.com/in/devalig) • [GitHub](https://github.com/DevAliG)
+---
+
+### 🌐 Socials  
+[LinkedIn](https://www.linkedin.com/in/alighanbarzadeh) | [YouTube](https://www.youtube.com/@theseyqal) | [X](https://x.com/TheSeyqal) | [TikTok](https://www.tiktok.com/@theseyqal) | [GitHub](https://github.com/Theseyqal) 
 
 ---
 
