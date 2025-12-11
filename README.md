@@ -62,7 +62,7 @@ Controllers involved:
 
 ## ⚙️ Installation
 ```bash
-git clone https://github.com/DevAliG/laravel-ecommerce.git
+git clone https://github.com/Theseyqal/laravel-ecommerce.git
 cd laravel-ecommerce
 composer install
 npm install
